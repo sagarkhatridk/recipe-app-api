@@ -59,7 +59,6 @@ class PublicRecipeAPITests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
 
-
 class PrivateRecipeAPITests(TestCase):
     """Test authenticated API requests."""
 
