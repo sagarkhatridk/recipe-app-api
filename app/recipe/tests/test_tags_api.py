@@ -23,7 +23,7 @@ def detail_url(tag_id):
 
 def create_user(email='user@example.com', password='testpass123'):
     """Create and return a new user."""
-    return get_user_model().objects.create_user(email, password  )
+    return get_user_model().objects.create_user(email, password)
 
 
 class PublicTagsApiTests(TestCase):
@@ -94,4 +94,3 @@ class PrivateTagsApiTests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_204_NO_CONTENT)
         tags = Tag.objects.filter(user=self.user)
         self.assertFalse(tags.exists())
-
