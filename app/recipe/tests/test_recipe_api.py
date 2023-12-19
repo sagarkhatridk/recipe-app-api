@@ -419,6 +419,7 @@ class PrivateRecipeAPITests(TestCase):
         self.assertIn(s2.data, res.data)
         self.assertNotIn(s3.data, res.data)
 
+
 class ImageUploadTest(TestCase):
     """Test for the image upload API."""
 
@@ -456,4 +457,3 @@ class ImageUploadTest(TestCase):
         res = self.client.post(url, payload, format='multipart')
 
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
-
