@@ -121,7 +121,6 @@ class BaseRecipeAttrViewSet(mixins.DestroyModelMixin,
         queryset = self.queryset
         if assigned_only:
             queryset = queryset.filter(recipe__isnull=False)
-            print("queryset ==>", queryset)
         return queryset.filter(
             user=self.request.user
         ).order_by('-name').distinct()
